@@ -9,11 +9,11 @@
 	@font-face {
 		font-family: 'Geogrotesque';
 		src: local('Geogrotesque Light'),
-			local('/test/resources/font/Geogrotesque-Light'),
-			url('/test/resources/font/GeogrotesqueCyr-Light.woff2')
+			local('/dmu/resources/font/Geogrotesque-Light'),
+			url('/dmu/resources/font/GeogrotesqueCyr-Light.woff2')
 			format('woff2'),
-			url('/test/resources/font/GeogrotesqueCyr-Light.woff') format('woff'),
-			url('/test/resources/font/GeogrotesqueCyr-Light.ttf')
+			url('/dmu/resources/font/GeogrotesqueCyr-Light.woff') format('woff'),
+			url('/dmu/resources/font/GeogrotesqueCyr-Light.ttf')
 			format('truetype');
 		font-weight: 300;
 		font-style: normal;
@@ -119,7 +119,11 @@
 	div#loginBtn, div#joinBtn {
 		margin-top : 20px;
 	}
-	div#loginBtn > button, div#joinBtn > button {
+	div#joinBtn a {
+		width : 100%;
+		height : 60px;
+	}
+	div#loginBtn button, div#joinBtn button {
 		color : white;
 		width : 100%;
 		height : 60px;
@@ -127,12 +131,12 @@
 		letter-spacing : -0.12rem;
 		font-weight : 400;
 	}
-	div#loginBtn > button {
+	div#loginBtn button {
 		color : white;
 		background : black;
 		border : 0.5px solid black;
 	}
-	div#joinBtn > button {
+	div#joinBtn button {
 		color : black;
 		background : white;
 		border : 0.5px solid black;
@@ -148,10 +152,14 @@
 		color : white;
 		cursor : pointer;
 	}
+	/******** 전체 페이지 *********/
+	main.login div.section{
+		min-width : 1200px;
+	}
 </style>
 </head>
 <body>
-	<main>
+	<main class = "login">
 		<div class = "section">
 			<div class = "container">
 				<h2>로그인</h2>			
@@ -181,10 +189,10 @@
 					</li>
 					<li>
 						<div id = "loginBtn">
-							<button>로그인</button>				
+							<button type = "button">로그인</button>				
 						</div>
 						<div id = "joinBtn">
-							<button>회원이&nbsp;&nbsp;아니신가요?&nbsp;&nbsp;가입하기</button>
+							<a href = "http://localhost:9000/dmu/join.do"><button type = "button">회원이&nbsp;아니신가요?&nbsp;가입하기</button></a>
 						</div>
 					</li>
 				</ul>

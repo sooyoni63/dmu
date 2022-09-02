@@ -2,11 +2,21 @@ package com.museum.vo;
 
 public class DmuMemberVO {
 	//DB Column Name
-	String did, pass, nationality, dname, gender, email, girth, pnumber, 
-		zonecode, addr1, addr2, terms, older, unregister, status;
+	int rno;
+	String did, pass, nationality, dname, gender, email, birth, pnumber, 
+		zonecode, addr1, addr2, terms, older, consent, unregister, status, ddate;
 	
 	//View에서 넘어오는 name
-	String email1, email2, pnum1, pnum2, pnum3;
+	String email1, email2, pnum1, pnum2, pnum3, year, month, day;
+
+	
+	public int getRno() {
+		return rno;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 
 	public String getDid() {
 		return did;
@@ -49,23 +59,35 @@ public class DmuMemberVO {
 	}
 
 	public String getEmail() {
-		return email;
+		if(email == null) {
+			return email1 + "@" + email2;
+		}else {
+			return email;			
+		}
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public String getGirth() {
-		return girth;
+	public String getBirth() {
+		if(birth == null) {
+			return year + "-" + month + "-" + day;
+		}else {
+			return birth;			
+		}
 	}
 
-	public void setGirth(String girth) {
-		this.girth = girth;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 
 	public String getPnumber() {
-		return pnumber;
+		if(pnumber == null) {
+			return pnum1 + "-" + pnum2 + "-" + pnum3;
+		}else {
+			return pnumber;			
+		}
 	}
 
 	public void setPnumber(String pnumber) {
@@ -110,6 +132,14 @@ public class DmuMemberVO {
 
 	public void setOlder(String older) {
 		this.older = older;
+	}
+
+	public String getConsent() {
+		return consent;
+	}
+
+	public void setConsent(String consent) {
+		this.consent = consent;
 	}
 
 	public String getUnregister() {
@@ -166,6 +196,38 @@ public class DmuMemberVO {
 
 	public void setPnum3(String pnum3) {
 		this.pnum3 = pnum3;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public String getDdate() {
+		return ddate;
+	}
+
+	public void setDdate(String ddate) {
+		this.ddate = ddate;
 	}
 	
 	
